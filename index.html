@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nyan gallery</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div id="loading">
+    <div></div>
+  </div>
+  <div id="container">
+    <header></header>
+    <nav></nav>
+    <main>
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </main>
+    
+  </div>
+</body>
+
+<script>
+  const loading =document.querySelector('#loading');
+    loading.style.opacity = 0;
+  console.dir(loading);
+
+  const box = document.querySelectorAll('main .box');
+  console.dir(box);
+
+//size set
+  function sizeSet(element, width, height, widthUnit, heightUnit) {
+    element.style.width = width + widthUnit;
+    element.style.height = height + heightUnit;
+  }
+  //main안에 box size 셋팅
+  
+  for(let i=0; i<box.length; i++) {
+    sizeSet(box[i], 100, 100, 'vw', 'vw');
+    console.log(box[0].style.width);
+  }
+  
+  //스크롤하면 div 생성
+  window.onscroll = function(e) {
+    console.log(window.innerHeight , window.scrollY, document.body.offsetHeight);
+    //윈도우 높이값과 바디 높이 값이 같다 
+    //윈도우 높이값에 스크롤 내리는 만큼 더한다.
+    //더한값이 바디높이값보다 커지면 작동
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      setTimeout(function(){
+        let addDiv = document.createElement('div');
+        addDiv.classList.add("box");
+
+        document.querySelector('main').appendChild(addDiv);
+      }, 1000);
+    }
+  }
+  
+
+</script>
+</html>
