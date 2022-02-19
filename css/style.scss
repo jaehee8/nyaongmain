@@ -88,7 +88,15 @@ $color-7 : #222;
     & > .box {
       @include size(100vw, 100vw, #ffc);
     }
-    
+    & > div:nth-child(1) {
+      & .img {
+        @include size(100%, 100%, $color-3);
+        background-image: url(../images/Pepe_shimada1.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 100% auto;
+      }
+    }
   }
 
 }

@@ -15,9 +15,12 @@
     <header></header>
     <nav></nav>
     <main>
-      <div class="box">1</div>
-      <div class="box">2</div>
-      <div class="box">3</div>
+      <div class="box">
+        <div class="img"></div>
+        <div class="text"></div>
+      </div>
+      <div class="box"></div>
+      <div class="box"></div>
     </main>
     
   </div>
@@ -43,18 +46,22 @@
     console.log(box[0].style.width);
   }
   
+
   //스크롤하면 div 생성
+  console.dir(window);
   window.onscroll = function(e) {
     console.log(window.innerHeight , window.scrollY, document.body.offsetHeight);
-    //윈도우 높이값과 바디 높이 값이 같다 
-    //윈도우 높이값에 스크롤 내리는 만큼 더한다.
-    //더한값이 바디높이값보다 커지면 작동
+    
+    //window height + window scrollY 값이 document height보다 클 경우
     if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      setTimeout(function(){
+      setTimeout(function(){ 
+        
         let addDiv = document.createElement('div');
         addDiv.classList.add("box");
-
+        //? 추후 생성된 .box에 size가 적용되지않아 scss에서 size 셋팅함
         document.querySelector('main').appendChild(addDiv);
+        
+        //?scroll을 쪼금 내려도 너무 많은 div가 생성됨 비효율적인듯..
       }, 1000);
     }
   }
