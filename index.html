@@ -39,7 +39,7 @@
 
   const box = document.querySelectorAll('main .box');
   console.dir(box);
-
+  const img = document.querySelector('.img');
 //size set
   function sizeSet(element, width, height, widthUnit, heightUnit) {
     element.style.width = width + widthUnit;
@@ -50,7 +50,8 @@
   for(let i=0; i<box.length; i++) {
     sizeSet(box[i], 100, 100, 'vw', 'vw');
     console.log(box[0].style.width);
-  }
+  };
+  sizeSet(img, 100, 100, '%','%');
   
   (function(){
     const main = document.querySelector('main');
@@ -67,10 +68,13 @@
       div.classList.add('box');
       img.classList.add('img');
       text.classList.add('text');
-
+      //?새로 생성된 요소에 사이즈가 적용되지 않는다.
       docFrag.appendChild(div);
       main.appendChild(docFrag);
     };
+
+
+
     //스크롤 바닥 감지
     window.onscroll = function(e) {
       //window height + window scrollY 값이 document height보다 클 경우
