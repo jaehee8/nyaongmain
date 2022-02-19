@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
 #loading {
   width: 100vw;
   height: 100vh;
@@ -37,9 +43,23 @@
   width: 100%;
   height: 8vh;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   position: fixed;
   top: 0;
   z-index: 1;
+}
+#container header > div {
+  width: 90%;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: transparent;
+}
+#container header > div a {
+  font-weight: bold;
 }
 #container nav {
   width: 100%;
@@ -58,13 +78,11 @@
   margin-top: 8vh;
   margin-bottom: 7vh;
 }
-#container main > div {
-  border: 1px solid salmon;
-}
 #container main > .box {
   width: 100vw;
   height: 100vw;
   background-color: #ffc;
+  border: 1px solid salmon;
   position: relative;
 }
 #container main > .box .img {
