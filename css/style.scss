@@ -63,7 +63,7 @@ $color-7 : #222;
   //헤더높이
   $height-1 : 8vh;
   //네비높이
-  $height-2 :7vh;
+  $height-2 :8vh;
 
   & header {
     @include size(100%, $height-1, $color-1);
@@ -79,38 +79,128 @@ $color-7 : #222;
     }
     
   }
+  //네비 이미지 세팅
+  @mixin navimg($url) {
+    background-image: $url;
+    background-position: 50% 50%;
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+  }
+
   & nav {
     @include size(100%, $height-2, $color-1);
+    @include flex(space-between, center, row);
+    padding: 0 5vw;
     position: fixed;
     bottom: 0;
     z-index: 1;
-  }
+    & > div {
+      @include size(11vw, 11vw, $color-1);
+      border-radius: 50%;
+      // border: 1px solid red;
+    }
+    & > div:nth-child(1) {
+      background-color: $color-6;
+      @include navimg(url(../images/icon-home.png));
+    }
+    & > div:nth-child(2) {
+      @include navimg(url(../images/icon-follow.png));
+    }
+    & > div:nth-child(3) {
+      @include navimg(url(../images/icon-trand.png));
+    }
+    & > div:nth-child(4) {
+      @include navimg(url(../images/icon-my-gallery.png));
+    }
+    & > div:nth-child(5) {
+      @include navimg(url(../images/icon-message.png));
+    }
 
-  // ?무한 div 생성해보기
+  }
+  
+
+  // main 컨텐츠
   & main {  
     @include size(100%, max-content, #fcf);
     margin-top: $height-1;
     margin-bottom: $height-2;
     & > .box {
       @include size(100vw, 100vw, #ffc);
-      border: 1px solid salmon;
+      // border: 1px solid salmon;
       position: relative;
       & .img {
         @include size(100%, 100%, $color-3);
       }
+      //.text 기본 사이즈 셋팅
       & .text {
-        @include size(100%, 5vh, $color-1);
+        @include size(100%, 7vh, $color-1);
         position: absolute;
         bottom: 0;
+        @include flex(space-between, center, row);
+        padding: 0 5vw;
+        & span {
+          margin: 0 2vw 0 1vw;
+          font-size: 12px;
+          font-weight: bold;
+          color: $color-6;
+        }
+        & .id-wrap,
+        & .btn {
+          @include flex(space-between, center, row);
+          & div {
+            @include size(8vw, 8vw, $color-2);
+            border-radius: 50%;
+          }
+          & .icon {
+            @include size(5vw, 5vw, transparent);
+            background-image: url(../images/zzim_1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+          }    
+        }
+        
       }
     }
-    & > div:nth-child(1) { // 첫번째 .box
+    //box 안에 이미지 세팅
+    @mixin img($url) {
+      background-image: $url;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    //프로필 이미지 세팅
+    @mixin Idimg($url) {
+      background-image: $url;
+      background-position: 50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    // 첫번째 .box
+    & > div:nth-child(1) { 
       & .img {
-        background-image: url(../images/Pepe_shimada1.jpg);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: 100% auto;
+        @include img(url(../images/Pepe_shimada1.jpg));
       }
+      & .profile {
+        @include Idimg(url(../images/Pepe_shimada3.jpeg));
+      }  
+    }
+    // 두번째 .box
+    & > div:nth-child(2) { 
+      & .img {
+        @include img(url(../images/myojeopdo_05_haejin.jpg));
+      }
+      & .profile {
+        @include Idimg(url(../images/myojeopdo_02_haejin.jpg));
+      }  
+    }
+    // 세번째 .box
+    & > div:nth-child(3) { 
+      & .img {
+        @include img(url(../images/noseockme-2.jpg));
+      }
+      & .profile {
+        @include Idimg(url(../images/noseockme-1.jpg));
+      }  
     }
   }
 
