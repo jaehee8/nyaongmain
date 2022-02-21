@@ -35,18 +35,17 @@ $color-5 : #484848;
 $color-6 : #333;
 $color-7 : #222;
 
-// ?키프레임으로 배경이미지를 두가지 올려서 애니효과를 내려다 실패
-
+//로딩페이지
 #loading {
-  @include size(100vw, 100vh, #ffc);
+  width: 100vw;
+  height: 100vh;
+  @include flex(center, center, row);
   position: fixed;
   top: 0;
-  z-index: 2;
-  @include flex(center, center, row);
+  z-index: 3;
   background-image: url(../images/rainbow-2.png);
   background-repeat: no-repeat;
   background-size: cover;
-  
   & > div {
     @include size(10vh, 10vh, transparent);
     background-image: url(../images/logo.png);
@@ -54,7 +53,6 @@ $color-7 : #222;
     background-size: cover;
   }
 }
-
 // 메인 페이지
 #container {
   @include size(100vw, 100vh, #eee);
