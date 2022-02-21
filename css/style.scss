@@ -48,7 +48,7 @@ $color-7 : #222;
   background-size: cover;
   
   & > div {
-    @include size(20vw, 20vw, transparent);
+    @include size(10vh, 10vh, transparent);
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,9 +61,9 @@ $color-7 : #222;
   // overflow: hidden;
 
   //헤더높이
-  $height-1 : 8vh;
+  $height-1 : 6vh;
   //네비높이
-  $height-2 :8vh;
+  $height-2 :7vh;
 
   & header {
     @include size(100%, $height-1, $color-1);
@@ -71,6 +71,7 @@ $color-7 : #222;
     position: fixed;
     top: 0;
     z-index: 1;
+    border-bottom: 1px solid #eee;
     & > div {
       @include size(90%, min-content, transparent);
       & a { //로고
@@ -94,8 +95,9 @@ $color-7 : #222;
     position: fixed;
     bottom: 0;
     z-index: 1;
+    border-top: 1px solid #eee;
     & > div {
-      @include size(11vw, 11vw, $color-1);
+      @include size(5vh, 5vh, $color-1);
       border-radius: 50%;
       // border: 1px solid red;
     }
@@ -133,7 +135,7 @@ $color-7 : #222;
       }
       //.text 기본 사이즈 셋팅
       & .text {
-        @include size(100%, 7vh, $color-1);
+        @include size(100%, 6vh, $color-1);
         position: absolute;
         bottom: 0;
         @include flex(space-between, center, row);
@@ -148,11 +150,11 @@ $color-7 : #222;
         & .btn {
           @include flex(space-between, center, row);
           & div {
-            @include size(8vw, 8vw, $color-2);
+            @include size(5vh, 5vh, $color-2);
             border-radius: 50%;
           }
           & .icon {
-            @include size(5vw, 5vw, transparent);
+            @include size(3vh, 3vh, transparent);
             background-image: url(../images/zzim_1.png);
             background-repeat: no-repeat;
             background-size: cover;
