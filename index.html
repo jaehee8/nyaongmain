@@ -115,7 +115,6 @@
   
   (function(){
     const main = document.querySelector('main');
-    let count = main.children.length;
 
     const template = function(n) {
       const docFrag = document.createDocumentFragment();
@@ -133,17 +132,22 @@
       main.appendChild(docFrag);
     };
 
-
-
-    //스크롤 바닥 감지
-    window.onscroll = function(e) {
-      //window height + window scrollY 값이 document height보다 클 경우
-      if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        count++;
-        template(count); //콘텐츠 추가
-        //여전히 비효율적으로 많은 div가 생성됨..악!
+    //스크롤 
+    let count = 0;
+    window.addEventListener('scroll', function(){
+      count++;
+      console.log(count);
+      if(count >= 30) {
+        template(count);
       }
-    };
+    }); 
+    
+      //window height + window scrollY 값이 document height보다 클 경우
+      // if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      //   count++;
+      //   template(count); //콘텐츠 추가
+        //여전히 비효율적으로 많은 div가 생성됨..악!
+      
 
 
   })();
