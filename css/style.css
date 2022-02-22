@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 a {
   display: block;
   text-decoration: none;
@@ -33,13 +41,44 @@ a {
   background-size: cover;
 }
 
-#container {
-  width: 100vw;
-  height: 100vh;
-  background-color: #eee;
+@media (min-width: 1024px) and (max-width: 1920px) {
+  #container {
+    width: 40vw;
+    height: 100vh;
+    background-color: #eee;
+  }
+  #container main .box {
+    width: 40vw;
+    height: 40vw;
+    background-color: #fcf;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #container {
+    width: 60vw;
+    height: 100vh;
+    background-color: #eee;
+  }
+  #container main .box {
+    width: 60vw;
+    height: 60vw;
+    background-color: #fcf;
+  }
+}
+@media (min-width: 320px) and (max-width: 768px) {
+  #container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #eee;
+  }
+  #container main .box {
+    width: 100vw;
+    height: 100vw;
+    background-color: #fcf;
+  }
 }
 #container header {
-  width: 100%;
+  width: inherit;
   height: 6vh;
   background-color: #fff;
   display: flex;
@@ -62,7 +101,7 @@ a {
   font-weight: bold;
 }
 #container nav {
-  width: 100%;
+  width: inherit;
   height: 7vh;
   background-color: #fff;
   display: flex;
@@ -113,18 +152,18 @@ a {
   background-repeat: no-repeat;
 }
 #container main {
-  width: 100%;
+  width: inherit;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   background-color: #fcf;
   margin-top: 6vh;
   margin-bottom: 7vh;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
 #container main > .box {
-  width: 100vw;
-  height: 100vw;
-  background-color: #ffc;
+  scroll-snap-align: center;
   position: relative;
 }
 #container main > .box .img {

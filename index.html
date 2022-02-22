@@ -107,14 +107,15 @@
   }
   //main안에 box size 셋팅
   
-  for(let i=0; i<box.length; i++) {
-    sizeSet(box[i], 100, 100, 'vw', 'vw');
-    console.log(box[0].style.width);
-  };
-  sizeSet(img, 100, 100, '%','%');
+  // for(let i=0; i<box.length; i++) {
+  //   sizeSet(box[i], 100, 100, 'vw', 'vw');
+  //   console.log(box[0].style.width);
+  // };
+  // sizeSet(img, 100, 100, '%','%');
   
     const main = document.querySelector('main');
 
+  //? 모바일에서는 안됨
     let count =0;
     let elementCount = 0;
     window.addEventListener("wheel", function (event) {

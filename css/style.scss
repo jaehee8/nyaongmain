@@ -3,14 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
-a {
-  display: block;
-  text-decoration: none;
-  color: #333;
-}
 
+//color
+$color-1 : #fff;
+$color-2 : #eee;
+$color-3 : #ccc;
+$color-4 : #767676;
+$color-5 : #484848;
+$color-6 : #333;
+$color-7 : #222;
+
+// width variable 
+$mobile-min-width : 320px;
+$tablet-min-width : 768px;
+$desktop-min-width : 1024px;
+$fullhd-min-width : 1920px;
+
+//헤더높이
+$height-1 : 6vh;
+//네비높이
+$height-2 :7vh;
 
 //mixin
+@mixin responsive-media-query ($min-width, $max-width) {
+  @media (min-width:$min-width) and (max-width:$max-width) {
+    @content;
+  }
+}
 @mixin size($width, $height, $background) { //size set
   width: $width;
   height: $height;
@@ -26,14 +45,15 @@ a {
 %font-weight {
   font-weight: 100;
 }
-//color
-$color-1 : #fff;
-$color-2 : #eee;
-$color-3 : #ccc;
-$color-4 : #767676;
-$color-5 : #484848;
-$color-6 : #333;
-$color-7 : #222;
+body {
+  background-color: #eee;
+  @include flex(center, center, column);
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
 
 //로딩페이지
 #loading {
@@ -54,18 +74,46 @@ $color-7 : #222;
   }
 }
 // 메인 페이지
+@include responsive-media-query($desktop-min-width, $fullhd-min-width) {
+  #container { //pc에서 보이는 사이즈셋팅
+    @include size(40vw, 100vh, #eee);
+    & main {
+      & .box {
+        @include size(40vw, 40vw, #fcf);
+      }
+    }
+  }
+}
+@include responsive-media-query($tablet-min-width, $desktop-min-width) {
+  #container { //태블릿에서 보이는 사이즈 셋팅
+    @include size(60vw, 100vh, #eee);
+    & main {
+      & .box {
+        @include size(60vw, 60vw, #fcf);
+      }
+    }
+  }
+}
+@include responsive-media-query($mobile-min-width, $tablet-min-width) { //모바일에서 보이는 사이즈 셋팅
+  #container {
+    @include size(100vw, 100vh, #eee);
+    & main {
+      & .box {
+        @include size(100vw, 100vw, #fcf);
+      }
+    }
+  }
+}
 #container {
-  @include size(100vw, 100vh, #eee);
+  // @include size(100vw, 100vh, #eee);
   // overflow: hidden;
 
-  //헤더높이
-  $height-1 : 6vh;
-  //네비높이
-  $height-2 :7vh;
+  
 
   & header {
-    @include size(100%, $height-1, $color-1);
+    @include size(inherit, $height-1, $color-1);
     @include flex(center, center, row);
+    
     position: fixed;
     top: 0;
     z-index: 1;
@@ -87,7 +135,7 @@ $color-7 : #222;
   }
 
   & nav {
-    @include size(100%, $height-2, $color-1);
+    @include size(inherit, $height-2, $color-1);
     @include flex(space-between, center, row);
     padding: 0 5vw;
     position: fixed;
@@ -121,12 +169,15 @@ $color-7 : #222;
 
   // main 컨텐츠
   & main {  
-    @include size(100%, max-content, #fcf);
+    @include size(inherit, max-content, #fcf);
     margin-top: $height-1;
     margin-bottom: $height-2;
+    //최신기술?
+    scroll-snap-type: y mandatory;
     & > .box {
-      @include size(100vw, 100vw, #ffc);
+      // @include size(100vw, 100vw, #ffc);
       // border: 1px solid salmon;
+      scroll-snap-align: center;
       position: relative;
       & .img {
         @include size(100%, 100%, $color-3);
