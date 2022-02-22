@@ -105,47 +105,55 @@ a {
   height: 7vh;
   background-color: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  padding: 0 5vw;
   position: fixed;
   bottom: 0;
   z-index: 1;
   border-top: 1px solid #eee;
 }
 #container nav > div {
+  width: 90%;
+  height: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#container nav > div > div {
   width: 5vh;
   height: 5vh;
   background-color: #fff;
   border-radius: 50%;
 }
-#container nav > div:nth-child(1) {
+#container nav > div > div:nth-child(1) {
   background-color: #333;
   background-image: url(../images/icon-home.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
 }
-#container nav > div:nth-child(2) {
+#container nav > div > div:nth-child(2) {
   background-image: url(../images/icon-follow.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
 }
-#container nav > div:nth-child(3) {
+#container nav > div > div:nth-child(3) {
   background-image: url(../images/icon-trand.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
 }
-#container nav > div:nth-child(4) {
+#container nav > div > div:nth-child(4) {
   background-image: url(../images/icon-my-gallery.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
 }
-#container nav > div:nth-child(5) {
+#container nav > div > div:nth-child(5) {
   background-image: url(../images/icon-message.png);
   background-position: 50% 50%;
   background-size: 90% auto;
@@ -175,33 +183,41 @@ a {
   width: 100%;
   height: 6vh;
   background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   position: absolute;
   bottom: 0;
+}
+#container main > .box .text > div {
+  width: 90%;
+  height: inherit;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding: 0 5vw;
 }
-#container main > .box .text span {
-  margin: 0 2vw 0 1vw;
+#container main > .box .text > div span {
+  margin: 0 5px 0 5px;
   font-size: 12px;
   font-weight: bold;
   color: #333;
 }
-#container main > .box .text .id-wrap, #container main > .box .text .btn {
+#container main > .box .text > div .id-wrap, #container main > .box .text > div .btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
-#container main > .box .text .id-wrap div, #container main > .box .text .btn div {
+#container main > .box .text > div .id-wrap div, #container main > .box .text > div .btn div {
   width: 5vh;
   height: 5vh;
   background-color: #eee;
   border-radius: 50%;
 }
-#container main > .box .text .id-wrap .icon, #container main > .box .text .btn .icon {
+#container main > .box .text > div .id-wrap .icon, #container main > .box .text > div .btn .icon {
   width: 3vh;
   height: 3vh;
   background-color: transparent;

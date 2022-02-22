@@ -107,9 +107,6 @@ a {
 #container {
   // @include size(100vw, 100vh, #eee);
   // overflow: hidden;
-
-  
-
   & header {
     @include size(inherit, $height-1, $color-1);
     @include flex(center, center, row);
@@ -136,33 +133,37 @@ a {
 
   & nav {
     @include size(inherit, $height-2, $color-1);
-    @include flex(space-between, center, row);
-    padding: 0 5vw;
+    @include flex(center, center, row);
     position: fixed;
     bottom: 0;
     z-index: 1;
     border-top: 1px solid #eee;
     & > div {
-      @include size(5vh, 5vh, $color-1);
-      border-radius: 50%;
-      // border: 1px solid red;
+      @include size(90%, inherit, transparent);
+      @include flex(space-between, center, row);
+      & > div {
+        @include size(5vh, 5vh, $color-1);
+        border-radius: 50%;
+        // border: 1px solid red;
+      }
+      & > div:nth-child(1) {
+        background-color: $color-6;
+        @include navimg(url(../images/icon-home.png));
+      }
+      & > div:nth-child(2) {
+        @include navimg(url(../images/icon-follow.png));
+      }
+      & > div:nth-child(3) {
+        @include navimg(url(../images/icon-trand.png));
+      }
+      & > div:nth-child(4) {
+        @include navimg(url(../images/icon-my-gallery.png));
+      }
+      & > div:nth-child(5) {
+        @include navimg(url(../images/icon-message.png));
+      }
     }
-    & > div:nth-child(1) {
-      background-color: $color-6;
-      @include navimg(url(../images/icon-home.png));
-    }
-    & > div:nth-child(2) {
-      @include navimg(url(../images/icon-follow.png));
-    }
-    & > div:nth-child(3) {
-      @include navimg(url(../images/icon-trand.png));
-    }
-    & > div:nth-child(4) {
-      @include navimg(url(../images/icon-my-gallery.png));
-    }
-    & > div:nth-child(5) {
-      @include navimg(url(../images/icon-message.png));
-    }
+    
 
   }
   
@@ -185,30 +186,34 @@ a {
       //.text 기본 사이즈 셋팅
       & .text {
         @include size(100%, 6vh, $color-1);
+        @include flex(center, center, row);
         position: absolute;
         bottom: 0;
-        @include flex(space-between, center, row);
-        padding: 0 5vw;
-        & span {
-          margin: 0 2vw 0 1vw;
-          font-size: 12px;
-          font-weight: bold;
-          color: $color-6;
-        }
-        & .id-wrap,
-        & .btn {
+        & > div {
+          @include size(90%, inherit, transparent);
           @include flex(space-between, center, row);
-          & div {
-            @include size(5vh, 5vh, $color-2);
-            border-radius: 50%;
+          & span {
+            margin: 0 5px 0 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: $color-6;
           }
-          & .icon {
-            @include size(3vh, 3vh, transparent);
-            background-image: url(../images/zzim_1.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-          }    
+          & .id-wrap,
+          & .btn {
+            @include flex(space-between, center, row);
+            & div {
+              @include size(5vh, 5vh, $color-2);
+              border-radius: 50%;
+            }
+            & .icon {
+              @include size(3vh, 3vh, transparent);
+              background-image: url(../images/zzim_1.png);
+              background-repeat: no-repeat;
+              background-size: cover;
+            }    
+          }
         }
+        
         
       }
     }
