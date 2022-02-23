@@ -41,6 +41,27 @@ $height-2 :7vh;
   align-items: $align;
   flex-direction: $flex;
 }
+//네비 이미지 세팅
+@mixin navimg($url) {
+  background-image: $url;
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+//box 안에 이미지 세팅
+@mixin img($url) {
+  background-image: $url;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+//프로필 이미지 세팅
+@mixin Idimg($url) {
+  background-image: $url;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 //extand
 %font-weight {
   font-weight: 100;
@@ -123,13 +144,7 @@ a {
     }
     
   }
-  //네비 이미지 세팅
-  @mixin navimg($url) {
-    background-image: $url;
-    background-position: 50% 50%;
-    background-size: 90% auto;
-    background-repeat: no-repeat;
-  }
+  
 
   & nav {
     @include size(inherit, $height-2, $color-1);
@@ -163,22 +178,15 @@ a {
         @include navimg(url(../images/icon-message.png));
       }
     }
-    
-
   }
   
-
   // main 컨텐츠
   & main {  
     @include size(inherit, max-content, #fcf);
     margin-top: $height-1;
     margin-bottom: $height-2;
-    //최신기술?
-    scroll-snap-type: y mandatory;
     & > .box {
-      // @include size(100vw, 100vw, #ffc);
       // border: 1px solid salmon;
-      scroll-snap-align: center;
       position: relative;
       & .img {
         @include size(100%, 100%, $color-3);
@@ -213,24 +221,9 @@ a {
             }    
           }
         }
-        
-        
       }
     }
-    //box 안에 이미지 세팅
-    @mixin img($url) {
-      background-image: $url;
-      background-position: 50% 50%;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    //프로필 이미지 세팅
-    @mixin Idimg($url) {
-      background-image: $url;
-      background-position: 50% 50%;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+    
     // 첫번째 .box
     & > div:nth-child(1) { 
       & .img {
