@@ -167,11 +167,8 @@ a {
   background-color: #fcf;
   margin-top: 6vh;
   margin-bottom: 7vh;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
 }
 #container main > .box {
-  scroll-snap-align: center;
   position: relative;
 }
 #container main > .box .img {

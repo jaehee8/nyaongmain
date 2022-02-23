@@ -76,8 +76,8 @@ a {
   color: #333;
 }
 
-//로딩페이지
-#loading {
+//시작할때만 보이는 로딩 페이지
+#loading { 
   width: 100vw;
   height: 100vh;
   @include flex(center, center, row);
