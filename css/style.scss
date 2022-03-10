@@ -160,22 +160,46 @@ a {
         @include size(5vh, 5vh, $color-1);
         border-radius: 50%;
         // border: 1px solid red;
+        & a {
+          display: block;
+          @include size(100%, 100%, #fff);
+          border-radius: 50%;
+        }
       }
       & > div:nth-child(1) {
         background-color: $color-6;
-        @include navimg(url(../images/icon-home.png));
+        @include navimg(url(../images/hover-icon-home.png));
       }
       & > div:nth-child(2) {
         @include navimg(url(../images/icon-follow.png));
       }
-      & > div:nth-child(3) {
-        @include navimg(url(../images/icon-trand.png));
+      & > div:nth-child(2):hover {
+        background-color: $color-6;
+        @include navimg(url(../images/hover-icon-follow.png));
       }
+      & > div:nth-child(3) {
+        & a {
+          @include navimg(url(../images/icon-trand.png));
+        }
+        & a:hover {
+          background-color: $color-6;
+          @include navimg(url(../images/hover-icon-trand.png));
+        }
+      }
+      
       & > div:nth-child(4) {
         @include navimg(url(../images/icon-my-gallery.png));
       }
+      & > div:nth-child(4):hover {
+        background-color: $color-6;
+        @include navimg(url(../images/hover-icon-my-gallery.png));
+      }
       & > div:nth-child(5) {
         @include navimg(url(../images/icon-message.png));
+      }
+      & > div:nth-child(5):hover {
+        background-color: $color-6;
+        @include navimg(url(../images/hover-icon-message.png));
       }
     }
   }

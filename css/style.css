@@ -128,9 +128,16 @@ a {
   background-color: #fff;
   border-radius: 50%;
 }
+#container nav > div > div a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+}
 #container nav > div > div:nth-child(1) {
   background-color: #333;
-  background-image: url(../images/icon-home.png);
+  background-image: url(../images/hover-icon-home.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
@@ -141,8 +148,22 @@ a {
   background-size: 90% auto;
   background-repeat: no-repeat;
 }
-#container nav > div > div:nth-child(3) {
+#container nav > div > div:nth-child(2):hover {
+  background-color: #333;
+  background-image: url(../images/hover-icon-follow.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(3) a {
   background-image: url(../images/icon-trand.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(3) a:hover {
+  background-color: #333;
+  background-image: url(../images/hover-icon-trand.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
@@ -153,8 +174,22 @@ a {
   background-size: 90% auto;
   background-repeat: no-repeat;
 }
+#container nav > div > div:nth-child(4):hover {
+  background-color: #333;
+  background-image: url(../images/hover-icon-my-gallery.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
 #container nav > div > div:nth-child(5) {
   background-image: url(../images/icon-message.png);
+  background-position: 50% 50%;
+  background-size: 90% auto;
+  background-repeat: no-repeat;
+}
+#container nav > div > div:nth-child(5):hover {
+  background-color: #333;
+  background-image: url(../images/hover-icon-message.png);
   background-position: 50% 50%;
   background-size: 90% auto;
   background-repeat: no-repeat;
