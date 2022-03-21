@@ -270,13 +270,14 @@ a {
   background-repeat: no-repeat;
 }
 #container main > div:nth-child(2) .img {
-  background-image: url(../images/myojeopdo_05_haejin.jpg);
+  background-image: url(../images/3.jpg);
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 50% 80%;
 }
 #container main > div:nth-child(2) .profile {
-  background-image: url(../images/myojeopdo_02_haejin.jpg);
+  background-image: url(../images/11.jpg);
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -289,6 +290,19 @@ a {
 }
 #container main > div:nth-child(3) .profile {
   background-image: url(../images/noseockme-1.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container main > div:nth-child(4) .img {
+  background-image: url(../images/11.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 80%;
+}
+#container main > div:nth-child(4) .profile {
+  background-image: url(../images/11.jpg);
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;

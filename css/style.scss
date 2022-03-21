@@ -260,10 +260,11 @@ a {
     // 두번째 .box
     & > div:nth-child(2) { 
       & .img {
-        @include img(url(../images/myojeopdo_05_haejin.jpg));
+        @include img(url(../images/3.jpg));
+        background-position: 50% 80%;
       }
       & .profile {
-        @include Idimg(url(../images/myojeopdo_02_haejin.jpg));
+        @include Idimg(url(../images/11.jpg));
       }  
     }
     // 세번째 .box
@@ -273,6 +274,16 @@ a {
       }
       & .profile {
         @include Idimg(url(../images/noseockme-1.jpg));
+      }  
+    }
+    // 네번째 .box
+    & > div:nth-child(4) { 
+      & .img {
+        @include img(url(../images/11.jpg));
+        background-position: 50% 80%;
+      }
+      & .profile {
+        @include Idimg(url(../images/11.jpg));
       }  
     }
   }
