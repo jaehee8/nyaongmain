@@ -235,24 +235,22 @@ $height-2 :7vh;
         & > div {
           @include size(90%, inherit, transparent);
           @include flex(space-between, center, row);
-          & span {
+          & span { //작가이름 작품제목 찜갯수
             margin: 0 5px 0 5px;
-            font-size: 12px;
-            font-weight: bold;
+            font-size: .8em;
             color: $color-6;
           }
           & .id-wrap,
           & .btn {
             @include flex(space-between, center, row);
             & div {
-              @include size(5vh, 5vh, $color-2);
+              @include size(4vh, 4vh, $color-2);
               border-radius: 50%;
             }
-            & .icon {
-              @include size(3vh, 3vh, transparent);
-              background-image: url(../images/zzim_1.png);
-              background-repeat: no-repeat;
-              background-size: cover;
+            & .icon { //찜버튼
+              @include size(2.5vh, 2.5vh, transparent);
+              @include img(url(../images/zzim_1.png));
+              // background-size: 90% auto;
             }    
           }
         }
